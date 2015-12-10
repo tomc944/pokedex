@@ -18,7 +18,7 @@ PokemonStore.__onDispatch = function(payload){
 };
 
 PokemonStore._resetPokemons = function(pokemons){
-  _pokemons = pokemons.slice();
+  _pokemons = pokemons;
   this.__emitChange();
 };
 

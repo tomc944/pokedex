@@ -1,8 +1,8 @@
 var React = require('react'),
     ReactDOM = require('react-dom');
 
-window.apiUtil = require('./util/apiUtil.js');
-window.PokemonStore = require('./stores/pokemon.js');
+// window.apiUtil = require('./util/apiUtil.js');
+// window.PokemonStore = require('./stores/pokemon.js');
 
 window.addEventListener('DOMContentLoaded', function() {
   var root = document.getElementById('root');

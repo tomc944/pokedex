@@ -7,7 +7,7 @@ var apiUtil = {
        url: 'api/pokemon',
        dataType: 'json',
        success: function(resp) {
-         ApiActions.receiveAllPokemons();
+         ApiActions.receiveAllPokemons(resp);
        }
     });
   }
