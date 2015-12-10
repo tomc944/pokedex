@@ -26443,7 +26443,7 @@
 	      return React.createElement(PokemonIndexItem, {
 	        key: idx,
 	        name: pokemon.name,
-	        type: pokemon.type });
+	        poke_type: pokemon.poke_type });
 	    });
 
 	    return React.createElement(

@@ -24,7 +24,7 @@ var PokemonsIndex = React.createClass({
         <PokemonIndexItem
         key={idx}
         name={pokemon.name}
-        type={pokemon.type} />
+        poke_type={pokemon.poke_type} />
       );
     });
 
