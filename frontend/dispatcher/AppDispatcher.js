@@ -1,2 +1,2 @@
-var AppDispatcher = require('util/flux').Dispatcher;
+var AppDispatcher = require('flux/utils').Dispatcher;
 module.exports = new AppDispatcher();
