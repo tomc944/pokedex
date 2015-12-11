@@ -62,7 +62,7 @@
 	    React.createElement(
 	      Route,
 	      { path: '/', component: App },
-	      React.createElement(Route, { path: 'api/pokemon/:pokemonId', component: PokemonDetail })
+	      React.createElement(Route, { path: 'pokemon/:pokemonId', component: PokemonDetail })
 	    )
 	  ), root);
 	});
@@ -24451,20 +24451,20 @@
 	    } else {
 	      return React.createElement(
 	        'div',
-	        null,
+	        { className: 'pokemon-detail-pane' },
 	        React.createElement(
 	          'div',
-	          { className: 'pokemon-detail-pane' },
-	          React.createElement(
-	            'div',
-	            { className: 'detail' },
-	            React.createElement('img', { src: this.state.pokemon.image_url }),
-	            this.state.pokemon.name,
-	            this.state.pokemon.poke_type,
-	            this.state.pokemon.attack,
-	            this.state.pokemon.defense,
-	            this.state.pokemon.moves
-	          )
+	          { className: 'detail' },
+	          React.createElement('img', { src: this.state.pokemon.image_url }),
+	          this.state.pokemon.name,
+	          React.createElement('br', null),
+	          this.state.pokemon.poke_type,
+	          React.createElement('br', null),
+	          this.state.pokemon.attack,
+	          React.createElement('br', null),
+	          this.state.pokemon.defense,
+	          React.createElement('br', null),
+	          this.state.pokemon.moves
 	        )
 	      );
 	    }
@@ -31224,12 +31224,12 @@
 	    return React.createElement(
 	      'div',
 	      { id: 'pokedex' },
-	      this.props.children,
 	      React.createElement(
 	        'div',
 	        { className: 'pokemon-index-pane' },
 	        React.createElement(PokemonsIndex, null)
-	      )
+	      ),
+	      this.props.children
 	    );
 	  }
 	});
@@ -31356,7 +31356,8 @@
 	
 	  mixins: [History],
 	  showDetail: function () {
-	    var pokemonUrl = "api/pokemon/" + this.props.id;
+	    var pokemonUrl = "pokemon/" + this.props.id;
+	    apiUtil.fetchPokemon(this.props.id);
 	    this.history.push(pokemonUrl);
 	  },
 	  componentWillReceiveProps: function (newProps) {
@@ -31367,7 +31368,7 @@
 	      'li',
 	      {
 	        className: 'poke-list-item',
-	        key: this.props.key,
+	        key: this.props.id,
 	        onClick: this.showDetail },
 	      this.props.name,
 	      ': ',

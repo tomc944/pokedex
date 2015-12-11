@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', function() {
   ReactDOM.render((
     <Router>
       <Route path="/" component={App}>
-        <Route path="api/pokemon/:pokemonId" component={PokemonDetail} />
+        <Route path="pokemon/:pokemonId" component={PokemonDetail} />
       </Route>
     </Router>)
   , root);

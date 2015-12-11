@@ -5,7 +5,8 @@ var React = require('react'),
 var PokemonIndexItem = React.createClass({
   mixins: [History],
   showDetail: function() {
-    var pokemonUrl = "api/pokemon/" + this.props.id;
+    var pokemonUrl = "pokemon/" + this.props.id;
+    apiUtil.fetchPokemon(this.props.id);
     this.history.push(pokemonUrl);
   },
   componentWillReceiveProps: function(newProps) {
@@ -15,7 +16,7 @@ var PokemonIndexItem = React.createClass({
     return(
       <li
         className="poke-list-item"
-        key={this.props.key}
+        key={this.props.id}
         onClick={this.showDetail}>
         {this.props.name}: {this.props.poke_type}
       </li>
