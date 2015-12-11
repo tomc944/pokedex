@@ -24455,8 +24455,9 @@
 	        React.createElement(
 	          'div',
 	          { className: 'detail' },
-	          React.createElement('img', { src: this.state.pokemon.image_url }),
 	          this.state.pokemon.name,
+	          React.createElement('br', null),
+	          React.createElement('img', { src: this.state.pokemon.image_url }),
 	          React.createElement('br', null),
 	          this.state.pokemon.poke_type,
 	          React.createElement('br', null),
@@ -24464,7 +24465,17 @@
 	          React.createElement('br', null),
 	          this.state.pokemon.defense,
 	          React.createElement('br', null),
-	          this.state.pokemon.moves
+	          React.createElement(
+	            'ul',
+	            null,
+	            this.state.pokemon.moves.map(function (move, idx) {
+	              return React.createElement(
+	                'li',
+	                { key: idx },
+	                move
+	              );
+	            })
+	          )
 	        )
 	      );
 	    }

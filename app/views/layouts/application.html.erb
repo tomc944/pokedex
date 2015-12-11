@@ -7,8 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <audio autoplay="true" hidden="true" loop="true" src="<%= asset_path('PokemonTVThemeSongFull.mp3') %>">
+  </audio>
 
   <script>
+    var theme = document.getElementsByTagName('audio')[0];
+    debugger
+    theme.play();
     window.pokemonTypes = [];
     <% Pokemon::TYPES.each do |type| %>
       pokemonTypes.push("<%= type.html_safe %>");

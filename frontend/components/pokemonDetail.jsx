@@ -24,8 +24,9 @@ var PokemonDetail = React.createClass({
       return (
           <div className="pokemon-detail-pane">
             <div className="detail">
-              <img src={ this.state.pokemon.image_url}></img>
               { this.state.pokemon.name }
+              <br></br>
+              <img src={ this.state.pokemon.image_url}></img>
               <br></br>
               { this.state.pokemon.poke_type }
               <br></br>
@@ -33,7 +34,11 @@ var PokemonDetail = React.createClass({
               <br></br>
               { this.state.pokemon.defense }
               <br></br>
-              { this.state.pokemon.moves }
+              <ul>
+              { this.state.pokemon.moves.map(function(move, idx){
+                return (<li key={idx}>{move}</li>);
+              }) }
+              </ul>
             </div>
           </div>
       );
