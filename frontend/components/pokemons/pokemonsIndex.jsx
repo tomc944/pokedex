@@ -18,11 +18,15 @@ var PokemonsIndex = React.createClass({
     this.token.remove();
   },
   render: function(){
-    // App Academy instructions are vague
-    var pokeList = this.state.pokemons.map(function(pokemon, idx){
+    var that = this;
+
+    var pokeKeys = Object.keys(this.state.pokemons);
+    var pokeList = pokeKeys.map(function(pokeId){
+      var pokemon = that.state.pokemons[pokeId];
       return(
         <PokemonIndexItem
-        key={idx}
+        key={pokeId}
+        id={pokeId}
         name={pokemon.name}
         poke_type={pokemon.poke_type} />
       );

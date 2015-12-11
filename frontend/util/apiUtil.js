@@ -10,6 +10,16 @@ var apiUtil = {
          ApiActions.receiveAllPokemons(resp);
        }
     });
+  },
+  fetchPokemon: function(id){
+    $.ajax({
+       method: 'GET',
+       url: 'api/pokemon/' + id,
+       dataType: 'json',
+       success: function(resp) {
+         ApiActions.receivePokemon(resp);
+       }
+    });
   }
 };
 

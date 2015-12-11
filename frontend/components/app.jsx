@@ -5,6 +5,7 @@ var App = React.createClass({
   render: function () {
     return(
       <div id="pokedex">
+        {this.props.children}
         <div className="pokemon-index-pane">
           <PokemonsIndex />
         </div>
